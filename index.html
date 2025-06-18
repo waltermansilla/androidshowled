@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+    <link rel="stylesheet" href="styles.css">
+    <style class="inter">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
+    <title>Android Show Led</title>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div id="nav__content">
+                <div class="nav__menu-hamburger">
+                    <button type="button" id="btnHamburger" class="menuHamburger-button">
+                        <span class="hamburger-style"></span>
+                        <span class="hamburger-style"></span>
+                        <span class="hamburger-style"></span>
+                    </button>
+                    <div id="menuHamburger" class="menuHamburger-menu">
+                        <button id="btnHamburgerInicio" style="--i:1" type="button">Inicio</button>
+                        <button id="btnHamburgerShows" style="--i:2" type="button">Shows para vos</button>
+                        <button id="btnHamburgerEmprende" style="--i:3" type="button">Emprendé</button>
+                        <button id="btnHamburgerGaleria" style="--i:4" type="button">Galería de fotos</button>
+                        
+                        <button id="btnHamburgerCotiza" style="--i:5" type="button">Cotizá tu presupuesto 
+                            <p class="mini-texto">¡En segundos! <span style="color: #bbb;">15% OFF</span></p></button> <br>
+                        <div style="--i:6;" class="menuHamburgerMenu__redes-container">
+                            <a style="scale: 1.1; margin: 0 5px 0 1.5vw ;" href="https://wa.me/5491135152227" class="button-whatsapp-contacto">
+                                <img src="/imagenes/iconos-footer/wsp-icon.png" alt="">
+                                <p>Contacto</p>
+                            </a>
+                            <div style="scale: 1.3;"><a href="https://www.instagram.com/android_show_led/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/iconos-footer/ig-icon.png" alt="" class="icon-ig"></a></div>
+                            <div style="scale: 1.34; margin-top: 3px;"><a href="https://m.facebook.com/androidshowledproducciones/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/iconos-footer/fb-icon.png" alt="" class="icon-fb"></a></div>
+                        </div>
+                        <div style="--i:7" class="menuHamburgerMenu__developer-container">
+                            <div class="menuHamburgerMenu__developer-item">
+                                <p>Sitio desarrollado por <span style="font-style: italic;">Walter Mansilla</span></p>
+                                <p>¿Queres una web?</p>
+                                <a href="https://wa.me/5493456023759" class="button-developer" style="margin-top: 5px;">Contactame</a>
+                            </div>
+                        </div>
+                    </div>
+                        <!--
+                        inicio
+                        shows
+                        emprende
+                        galeria
+                        cotiza tu presupuesto (abajo chico: lo tenes en unos segundos)
+                                        
+                        (boton "contacto" con icono como el de footer)
+                        (iconos ig, fb)
+                                        
+                        linea 70% / Texto gris
+                        Sitio desarrollado por Walter Mansilla
+                        Queres una web? Contactame
+                        -->
+                </div>
+                <div id="logoNav" class="nav__logo">
+                    <a href="index.html">
+                        <img src="/imagenes/asl-slogan.jpg" alt="">
+                    </a>
+                </div>
+                <div class="nav__budget">
+                    <button type="button" class="button-budget button-budget--nav">Cotizá</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Section "Inicio" -->
+        <section id="inicio">
+            <div class="inicio__container">
+                <div class="inicio__content">
+                    <div class="inicio__slogan-robot-container">
+                        <div class="inicio__slogan-robot-content">
+                            <div class="slogan-robot__logo">
+                                <img src="/imagenes/asl-logo.jpeg" alt="">
+                            </div>
+                            <div class="slogan-robot__robot">
+                                <img src="/imagenes/asl-robotx3real.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inicio__counter-container">
+                        <div class="inicio__counter-content">
+                            <div class="counter__item counter-1">
+                                <p class="counter-item__number">+000</p>
+                                <p class="counter-item__text">Shows</p>
+                            </div>
+                            <div class="counter-item counter-2">
+                                <p class="counter-item__number">+000000</p>
+                                <p class="counter-item__text">Público total</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="button-budget">
+                        <p>Cotizá tu</p>
+                        <p>presupuesto</p>
+                    </button>
+                </div>
+            </div>
+        </section> <!-- Section "Inicio" end -->
+
+        <!-- Section Shows -->
+        <section id="shows">
+            <div class="shows__container">
+                <div class="shows__content">
+
+                    <!-- img, "vibrá, sentí" -->
+                    <div class="shows__img-description-container container--img-text-description">
+                        <div class="img-description__img">
+                            <img src="ChatGPT Image 8 de abr. de 2025 11_45_53.jpg" alt="">
+                        </div>
+                        <div class="img-description__text">
+                            <h3>Luces, <br>cámara, <br><span>'¡robot!'</span></h3>
+                        </div>
+                    </div>
+                    <div class="shows__img-paragraph">
+                        <p class="paragraph paragraph--gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat sapiente eligendi, rerum aspernatur dolorum ducimus illum et, sequi a odio explicabo dignissimos iure voluptatibus fugit excepturi, esse laudantium consequatur porro.</p>
+                    </div>
+
+                    <!-- services -->
+                    <div class="shows__services-container">
+                        <div class="shows__services-content">
+
+                            <div class="shows__service">
+                                <div class="service-img">
+                                    <img src="/show.jpeg" alt="">
+                                </div>
+                                <div class="service-text">
+                                    <h4 class="subtitle-h4 ">Robots</h4>
+                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                </div>
+                            </div>
+
+                            <div class="shows__service">
+                                <div class="service-img">
+                                    <img src="/show.jpeg" alt="">
+                                </div>
+                                <div class="service-text">
+                                    <h4 class="subtitle-h4 ">Chispas frías</h4>
+                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                </div>
+                            </div>
+<!--
+                            <div class="shows__service">
+                                <div class="service-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="service-text">
+                                    <h4 class="subtitle-h4 ">Plataforma 360</h4>
+                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                </div>
+                            </div>
+
+                            <div class="shows__service">
+                                <div class="service-img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="service-text">
+                                    <h4 class="subtitle-h4 ">Robots</h4>
+                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                </div>
+                            </div>
+-->
+                        </div>
+                    </div>
+
+                    <!-- Button x2* -->
+                    <div class="shows__buttons-container">
+                        <div class="shows__button">
+                            <a class="button-gallery">Explorá nuestra galería ›</a> <!-- boton transparente, borde y letra celeste -->
+                        </div>
+                        <div class="shows__button">
+                            <a href="#presupuesto__box" class="button-budget button-budget--shows">
+                                <p>Cotizá tu</p>
+                                <p>presupuesto</p>
+                            </a>
+                            <!-- <div class="discount">10%<br>OFF</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Section "Shows" end -->
+
+        <!-- Section "Testimonios" -->
+        <section id="testimonios">
+            <div class="testimonios__container">
+                <div class="testimonios__content">
+                    <div class="testimonios__title">
+                        <h2 class="subtitle-h2 paragraph--white">Aprobado por <br>los que saben de <br><span class="text-green">espectáculo.</span></h2>
+                    </div>
+                    <div class="testimonios__gallery">
+                        <div class="gallery__column">
+                            <img src="/imagenes/img-testimonios/1.jpg" alt="">
+                            <img src="/imagenes/img-testimonios/2.jpg" alt="">
+                            <img src="/imagenes/img-testimonios/3.jpg" alt="">
+                        </div>
+                        <div class="gallery__column">
+                            <img src="/imagenes/img-testimonios/4.jpg" alt="">
+                            <img src="/imagenes/img-testimonios/5.jpg" alt="">
+                            <img src="/imagenes/img-testimonios/6.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Testimonios en videos -->
+                    <div class="testimonios__videos-subtitle">
+                        <h4 class="subtitle-h4">Te lo cuentan ellos.</h4>
+                        <a class="button-gallery" style="font-size: 1rem;">Ver galería completa ›</a>
+                    </div>
+                    <div class="testimonios__videos-container">
+                        <div class="testimonios__spacer"></div>
+                        <div class="testimonios__video-box">
+                            <div class="video-box__video">
+                                <video src="/Videos testimonios/VID1.mp4" poster="/Videos testimonios/imagenes para videos/img-vid-muestra.jpeg" muted playsinline preload="none" ></video>
+                                <button class="btn-sonido">
+                                    <svg class="svg-mute" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Off_02">
+                                            <path id="Vector" d="M10 9.18725H8.8125C8.0563 9.18725 7.6782 9.18725 7.37264 9.28819C6.77131 9.48684 6.2996 9.95855 6.10094 10.5599C6 10.8654 6 11.2435 6 11.9997C6 12.7559 6 13.134 6.10094 13.4396C6.2996 14.0409 6.77131 14.5127 7.37264 14.7113C7.6782 14.8122 8.0563 14.8122 8.8125 14.8122H10.2358C10.5165 14.8122 10.6569 14.8122 10.7866 14.8478C10.9015 14.8792 11.0098 14.931 11.1065 15.0006C11.2157 15.0791 11.3039 15.1883 11.4803 15.4066L13.1555 17.4797C14.0288 18.5604 14.4655 19.1008 14.848 19.1596C15.1792 19.2105 15.5138 19.0922 15.7394 18.8444C16 18.5583 16 17.8635 16 16.4741V14.9997M16 10.4997V6.97735C16 6.04105 16 5.57291 15.8776 5.3488C15.6329 4.90109 15.0905 4.70931 14.6188 4.90379C14.3827 5.00113 14.0885 5.36526 13.5 6.0935L12.875 6.86693M6 4.99975L20 18.9997" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="svg-volume" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Max">
+                                            <path id="Vector" d="M18.82 4.68652C19.8191 5.61821 20.6167 6.74472 21.1636 7.99657C21.7105 9.24842 21.9952 10.5991 21.9999 11.9652C22.0047 13.3313 21.7295 14.6838 21.1914 15.9395C20.6532 17.1951 19.8635 18.3272 18.8709 19.2658M16.092 7.61194C16.6915 8.17095 17.17 8.84686 17.4982 9.59797C17.8263 10.3491 17.9971 11.1595 18 11.9791C18.0028 12.7988 17.8377 13.6103 17.5148 14.3637C17.1919 15.1171 16.7181 15.7963 16.1225 16.3595M7.4803 15.4069L9.15553 17.48C10.0288 18.5607 10.4655 19.1011 10.848 19.1599C11.1792 19.2108 11.5138 19.0925 11.7394 18.8448C12 18.5586 12 17.8638 12 16.4744V7.52572C12 6.13627 12 5.44155 11.7394 5.15536C11.5138 4.90761 11.1792 4.78929 10.848 4.84021C10.4655 4.89904 10.0288 5.43939 9.15553 6.52009L7.4803 8.59319C7.30388 8.81151 7.21567 8.92067 7.10652 8.99922C7.00982 9.06881 6.90147 9.12056 6.78656 9.15204C6.65687 9.18756 6.51652 9.18756 6.23583 9.18756H4.8125C4.0563 9.18756 3.6782 9.18756 3.37264 9.2885C2.77131 9.48716 2.2996 9.95887 2.10094 10.5602C2 10.8658 2 11.2439 2 12.0001C2 12.7563 2 13.1344 2.10094 13.4399C2.2996 14.0413 2.77131 14.513 3.37264 14.7116C3.6782 14.8126 4.0563 14.8126 4.8125 14.8126H6.23583C6.51652 14.8126 6.65687 14.8126 6.78656 14.8481C6.90147 14.8796 7.00982 14.9313 7.10652 15.0009C7.21567 15.0794 7.30388 15.1886 7.4803 15.4069Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="video-box__p">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate sit tempore quis repellendus aperiam harum.</p>
+                            </div>
+                        </div>
+                        <div class="testimonios__spacer"></div>
+                        <div class="testimonios__video-box">
+                            <div class="video-box__video">
+                                <video src="/Videos testimonios/VID2.mp4" poster="/Videos testimonios/imagenes para videos/img-vid-muestra.jpeg" muted playsinline preload="none" ></video>
+                                <button class="btn-sonido">
+                                    <svg class="svg-mute" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Off_02">
+                                            <path id="Vector" d="M10 9.18725H8.8125C8.0563 9.18725 7.6782 9.18725 7.37264 9.28819C6.77131 9.48684 6.2996 9.95855 6.10094 10.5599C6 10.8654 6 11.2435 6 11.9997C6 12.7559 6 13.134 6.10094 13.4396C6.2996 14.0409 6.77131 14.5127 7.37264 14.7113C7.6782 14.8122 8.0563 14.8122 8.8125 14.8122H10.2358C10.5165 14.8122 10.6569 14.8122 10.7866 14.8478C10.9015 14.8792 11.0098 14.931 11.1065 15.0006C11.2157 15.0791 11.3039 15.1883 11.4803 15.4066L13.1555 17.4797C14.0288 18.5604 14.4655 19.1008 14.848 19.1596C15.1792 19.2105 15.5138 19.0922 15.7394 18.8444C16 18.5583 16 17.8635 16 16.4741V14.9997M16 10.4997V6.97735C16 6.04105 16 5.57291 15.8776 5.3488C15.6329 4.90109 15.0905 4.70931 14.6188 4.90379C14.3827 5.00113 14.0885 5.36526 13.5 6.0935L12.875 6.86693M6 4.99975L20 18.9997" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="svg-volume" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Max">
+                                            <path id="Vector" d="M18.82 4.68652C19.8191 5.61821 20.6167 6.74472 21.1636 7.99657C21.7105 9.24842 21.9952 10.5991 21.9999 11.9652C22.0047 13.3313 21.7295 14.6838 21.1914 15.9395C20.6532 17.1951 19.8635 18.3272 18.8709 19.2658M16.092 7.61194C16.6915 8.17095 17.17 8.84686 17.4982 9.59797C17.8263 10.3491 17.9971 11.1595 18 11.9791C18.0028 12.7988 17.8377 13.6103 17.5148 14.3637C17.1919 15.1171 16.7181 15.7963 16.1225 16.3595M7.4803 15.4069L9.15553 17.48C10.0288 18.5607 10.4655 19.1011 10.848 19.1599C11.1792 19.2108 11.5138 19.0925 11.7394 18.8448C12 18.5586 12 17.8638 12 16.4744V7.52572C12 6.13627 12 5.44155 11.7394 5.15536C11.5138 4.90761 11.1792 4.78929 10.848 4.84021C10.4655 4.89904 10.0288 5.43939 9.15553 6.52009L7.4803 8.59319C7.30388 8.81151 7.21567 8.92067 7.10652 8.99922C7.00982 9.06881 6.90147 9.12056 6.78656 9.15204C6.65687 9.18756 6.51652 9.18756 6.23583 9.18756H4.8125C4.0563 9.18756 3.6782 9.18756 3.37264 9.2885C2.77131 9.48716 2.2996 9.95887 2.10094 10.5602C2 10.8658 2 11.2439 2 12.0001C2 12.7563 2 13.1344 2.10094 13.4399C2.2996 14.0413 2.77131 14.513 3.37264 14.7116C3.6782 14.8126 4.0563 14.8126 4.8125 14.8126H6.23583C6.51652 14.8126 6.65687 14.8126 6.78656 14.8481C6.90147 14.8796 7.00982 14.9313 7.10652 15.0009C7.21567 15.0794 7.30388 15.1886 7.4803 15.4069Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="video-box__p">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate sit tempore quis repellendus aperiam harum.</p>
+                            </div>
+                        </div>
+                        <div class="testimonios__spacer"></div>
+                        <div class="testimonios__video-box">
+                            <div class="video-box__video">
+                                <video src="/Videos testimonios/VID3.mp4" poster="/Videos testimonios/imagenes para videos/img-vid-muestra.jpeg" muted playsinline preload="none" ></video>
+                                <button class="btn-sonido">
+                                    <svg class="svg-mute" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Off_02">
+                                            <path id="Vector" d="M10 9.18725H8.8125C8.0563 9.18725 7.6782 9.18725 7.37264 9.28819C6.77131 9.48684 6.2996 9.95855 6.10094 10.5599C6 10.8654 6 11.2435 6 11.9997C6 12.7559 6 13.134 6.10094 13.4396C6.2996 14.0409 6.77131 14.5127 7.37264 14.7113C7.6782 14.8122 8.0563 14.8122 8.8125 14.8122H10.2358C10.5165 14.8122 10.6569 14.8122 10.7866 14.8478C10.9015 14.8792 11.0098 14.931 11.1065 15.0006C11.2157 15.0791 11.3039 15.1883 11.4803 15.4066L13.1555 17.4797C14.0288 18.5604 14.4655 19.1008 14.848 19.1596C15.1792 19.2105 15.5138 19.0922 15.7394 18.8444C16 18.5583 16 17.8635 16 16.4741V14.9997M16 10.4997V6.97735C16 6.04105 16 5.57291 15.8776 5.3488C15.6329 4.90109 15.0905 4.70931 14.6188 4.90379C14.3827 5.00113 14.0885 5.36526 13.5 6.0935L12.875 6.86693M6 4.99975L20 18.9997" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="svg-volume" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Max">
+                                            <path id="Vector" d="M18.82 4.68652C19.8191 5.61821 20.6167 6.74472 21.1636 7.99657C21.7105 9.24842 21.9952 10.5991 21.9999 11.9652C22.0047 13.3313 21.7295 14.6838 21.1914 15.9395C20.6532 17.1951 19.8635 18.3272 18.8709 19.2658M16.092 7.61194C16.6915 8.17095 17.17 8.84686 17.4982 9.59797C17.8263 10.3491 17.9971 11.1595 18 11.9791C18.0028 12.7988 17.8377 13.6103 17.5148 14.3637C17.1919 15.1171 16.7181 15.7963 16.1225 16.3595M7.4803 15.4069L9.15553 17.48C10.0288 18.5607 10.4655 19.1011 10.848 19.1599C11.1792 19.2108 11.5138 19.0925 11.7394 18.8448C12 18.5586 12 17.8638 12 16.4744V7.52572C12 6.13627 12 5.44155 11.7394 5.15536C11.5138 4.90761 11.1792 4.78929 10.848 4.84021C10.4655 4.89904 10.0288 5.43939 9.15553 6.52009L7.4803 8.59319C7.30388 8.81151 7.21567 8.92067 7.10652 8.99922C7.00982 9.06881 6.90147 9.12056 6.78656 9.15204C6.65687 9.18756 6.51652 9.18756 6.23583 9.18756H4.8125C4.0563 9.18756 3.6782 9.18756 3.37264 9.2885C2.77131 9.48716 2.2996 9.95887 2.10094 10.5602C2 10.8658 2 11.2439 2 12.0001C2 12.7563 2 13.1344 2.10094 13.4399C2.2996 14.0413 2.77131 14.513 3.37264 14.7116C3.6782 14.8126 4.0563 14.8126 4.8125 14.8126H6.23583C6.51652 14.8126 6.65687 14.8126 6.78656 14.8481C6.90147 14.8796 7.00982 14.9313 7.10652 15.0009C7.21567 15.0794 7.30388 15.1886 7.4803 15.4069Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="video-box__p">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate sit tempore quis repellendus aperiam harum.</p>
+                            </div>
+                        </div>
+                        <div class="testimonios__spacer"></div>
+                        <div class="testimonios__video-box">
+                            <div class="video-box__video">
+                                <video src="/Videos testimonios/VID1.mp4" poster="/Videos testimonios/imagenes para videos/img-vid-muestra.jpeg" muted playsinline preload="none" ></video>
+                                <button class="btn-sonido">
+                                    <svg class="svg-mute" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Off_02">
+                                            <path id="Vector" d="M10 9.18725H8.8125C8.0563 9.18725 7.6782 9.18725 7.37264 9.28819C6.77131 9.48684 6.2996 9.95855 6.10094 10.5599C6 10.8654 6 11.2435 6 11.9997C6 12.7559 6 13.134 6.10094 13.4396C6.2996 14.0409 6.77131 14.5127 7.37264 14.7113C7.6782 14.8122 8.0563 14.8122 8.8125 14.8122H10.2358C10.5165 14.8122 10.6569 14.8122 10.7866 14.8478C10.9015 14.8792 11.0098 14.931 11.1065 15.0006C11.2157 15.0791 11.3039 15.1883 11.4803 15.4066L13.1555 17.4797C14.0288 18.5604 14.4655 19.1008 14.848 19.1596C15.1792 19.2105 15.5138 19.0922 15.7394 18.8444C16 18.5583 16 17.8635 16 16.4741V14.9997M16 10.4997V6.97735C16 6.04105 16 5.57291 15.8776 5.3488C15.6329 4.90109 15.0905 4.70931 14.6188 4.90379C14.3827 5.00113 14.0885 5.36526 13.5 6.0935L12.875 6.86693M6 4.99975L20 18.9997" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="svg-volume" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Media / Volume_Max">
+                                            <path id="Vector" d="M18.82 4.68652C19.8191 5.61821 20.6167 6.74472 21.1636 7.99657C21.7105 9.24842 21.9952 10.5991 21.9999 11.9652C22.0047 13.3313 21.7295 14.6838 21.1914 15.9395C20.6532 17.1951 19.8635 18.3272 18.8709 19.2658M16.092 7.61194C16.6915 8.17095 17.17 8.84686 17.4982 9.59797C17.8263 10.3491 17.9971 11.1595 18 11.9791C18.0028 12.7988 17.8377 13.6103 17.5148 14.3637C17.1919 15.1171 16.7181 15.7963 16.1225 16.3595M7.4803 15.4069L9.15553 17.48C10.0288 18.5607 10.4655 19.1011 10.848 19.1599C11.1792 19.2108 11.5138 19.0925 11.7394 18.8448C12 18.5586 12 17.8638 12 16.4744V7.52572C12 6.13627 12 5.44155 11.7394 5.15536C11.5138 4.90761 11.1792 4.78929 10.848 4.84021C10.4655 4.89904 10.0288 5.43939 9.15553 6.52009L7.4803 8.59319C7.30388 8.81151 7.21567 8.92067 7.10652 8.99922C7.00982 9.06881 6.90147 9.12056 6.78656 9.15204C6.65687 9.18756 6.51652 9.18756 6.23583 9.18756H4.8125C4.0563 9.18756 3.6782 9.18756 3.37264 9.2885C2.77131 9.48716 2.2996 9.95887 2.10094 10.5602C2 10.8658 2 11.2439 2 12.0001C2 12.7563 2 13.1344 2.10094 13.4399C2.2996 14.0413 2.77131 14.513 3.37264 14.7116C3.6782 14.8126 4.0563 14.8126 4.8125 14.8126H6.23583C6.51652 14.8126 6.65687 14.8126 6.78656 14.8481C6.90147 14.8796 7.00982 14.9313 7.10652 15.0009C7.21567 15.0794 7.30388 15.1886 7.4803 15.4069Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="video-box__p">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate sit tempore quis repellendus aperiam harum.</p>
+                            </div>
+                        </div>
+                        <div class="testimonios__spacer"></div>
+                    </div>
+
+                    <div class="testimonios__bottom">
+                        <h4 class="testimonios__text subtitle-h4 paragraph--gray">
+                            Ahora es tu turno. <br>¿Listo para <span class="text-green" style="opacity: 1; padding: 0;">brillar</span>?
+                        </h4>
+                    </div>
+                    <div class="testimonios__buttons">
+                        <button type="button" href="#presupuesto__box" class="button-budget button-budget--testimonios">
+                            <p>Cotizá tu</p>
+                            <p>presupuesto</p>
+                        </button>
+                        <!-- <div class="discount">10%<br>OFF</div> -->
+                    </div>
+                </div>
+            </div> <!-- container -->
+        </section> <!-- Section "Testimonios" end -->
+
+        <section id="emprende">
+            <div class="emprende__container">
+                <div class="emprende__content">
+                    <div class="emprende__title-container ">
+                        <h2 class="subtitle-h2 paragraph--gray">¿Querés armar <br>tu propio <br><span class="text-gradient">robot LED</span>?</h2>
+                    </div>
+                    <div class="emprende__description-container">
+                        <!--<p class="paragraph paragraph--white" style="padding-bottom: 10px;">¿Pensabas que solo hacíamos shows?</p>-->
+                        <p class="paragraph paragraph--gray"><span class="paragraph--white">¿Pensabas que solo hacíamos shows?</span>También diseñamos y fabricamos todo tu equipamiento LED.</p>
+                        <p class="paragraph paragraph--gray">Lo fabricamos todo desde nuestro taller: <span class="paragraph--white">desde los trajes LED hasta los accesorios que harán que tus shows exploten</span>, como guantes láser, limbo LED, cuadros LED y chispas frías.</p>
+                        <p class="paragraph paragraph--gray">Tambien te proveemos herramientas adicionales: los <span class="paragraph--white">zancos</span> que necesitás e incluso la <span class="paragraph--white">famosa plataforma 360</span>.</p>
+                        <p class="paragraph paragraph--white">Todo para vos. Todo para que puedas emprender.</p>
+                    </div>
+
+                    <div class="emprende__tips-container">
+                        <div class="emprende__tip">
+                            <img class="emprende__icons" style="width: 24px;" src="/imagenes/iconos-emprende/rayo.png" alt="">
+                            <p class="paragraph text-gradient">Modelos listos para usar.</p>
+                            <p class="paragraph paragraph--gray">Solo encendés y ¡a brillar!</p>
+                        </div>
+                        <div class="emprende__tip">
+                            <img class="emprende__icons" style="width: 32px;" src="/imagenes/iconos-emprende/mas.png" alt="">
+                            <p class="paragraph text-gradient">Añadí extras.</p>
+                            <p class="paragraph paragraph--gray">Podés sumar gran variedad de accesorios</p>
+                        </div>
+                        <div class="emprende__tip">
+                            <img class="emprende__icons" style="width: 39px;" src="/imagenes/iconos-emprende/envios.png" alt="">
+                            <p class="paragraph text-gradient">Envíos a todo el país.</p>
+                            <p class="paragraph paragraph--gray">Desde nuestro taller hasta tu casa</p>
+                        </div>
+                        <div class="emprende__tip">
+                            <img class="emprende__icons" style="width: 39px;" src="/imagenes/iconos-emprende/asesoramiento.png" alt="">
+                            <p class="paragraph text-gradient">Asesoramiento personalizado.</p>
+                            <p class="paragraph paragraph--gray">Te guiamos paso a paso cómo usar nuestros productos, cómo hacer para que tu fiesta explote, y tips de marketing.</p>
+                        </div>
+                    </div>
+                    <div class="emprende__button">
+                        <button id="btnIrAEmprender" class="button-emprender">
+                            <p>Quiero emprender</p>
+                            <p>➔</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="presupuesto">
+            <div class="presupuesto__container">
+                <div class="presupuesto__content">
+                    <h2 class="presupuesto__title subtitle-h2 paragraph--gray">Calculá tu presupuesto</h2>
+                    <form id="presupuesto__box">
+
+                        <div class="presupuesto__box-title">
+                            <h3>Elegí tu servicio</h3>
+                        </div>
+
+                        <div class="presupuesto__box-servicios">
+                            <div class="presupuesto__box-servicios-button">
+                                <button type="button" id="btnShow" class="presupuesto__button-show activo">SHOW</button>
+                            </div>
+                            <div class="presupuesto__box-servicios-button">
+                                <button type="button" id="btnEmprender" class="presupuesto__button-emprender">EMPRENDER</button>
+                            </div>
+                        </div>
+
+                        <div id="formShow" class="presupuesto__box-show">
+                            <div class="presupuesto-show__item-box">
+                                <div class="presupuesto-show__pregunta">
+                                    <label>¿Qué estas organizando?</label>
+                                </div>
+                                <div class="presupuesto-show__opciones">
+                                    <label>
+                                        <input type="radio" name="tipo-evento" value="casamiento" data-price="0">
+                                        <span class="opcion-button">Casamiento</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo-evento" value="cumpleanios" data-price="0">
+                                        <span class="opcion-button">Cumpleaños</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo-evento" value="despedida" data-price="0">
+                                        <span class="opcion-button">Despedida</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo-evento" value="niños" data-price="0">
+                                        <span class="opcion-button">Niños</span>
+                                    </label>
+                                    <label>
+                                        <input class="otro-evento" type="radio" name="tipo-evento" value="otro" data-price="0">
+                                        <span class="opcion-button">Otro <input class="otro-evento__input" type="text" placeholder="Tipo de evento"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                            <div id="presupuesto__box-opacity-1" class="box-opacar">
+                                <div class="presupuesto-show__item-box">
+                                    <div class="presupuesto-show__pregunta">
+                                        <label>Elegí cuántos robots querés:</label>
+                                    </div>
+                                    <div class="presupuesto-show__opciones opciones--num">
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="1" data-price="100000">
+                                            <span class="opcion-button">1</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="2" data-price="160000">
+                                            <span class="opcion-button">2</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="3" data-price="220000">
+                                            <span class="opcion-button">3</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="4" data-price="280000">
+                                            <span class="opcion-button">4</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="5" data-price="330000">
+                                            <span class="opcion-button">5</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="cantidad-robots" value="6" data-price="380000">
+                                            <span class="opcion-button">6</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="cantidad-robots" value="payaso-led" data-price="80000">
+                                            <span class="opcion-button">Payaso LED</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="presupuesto__box-opacity-2" class="box-opacar">
+                                <div class="presupuesto-show__item-box">
+                                    <div class="presupuesto-show__pregunta">
+                                        <p>(OPCIONAL)</p>
+                                        <label>Elegí los servicios adicionales que quieras: </label>
+                                    </div>
+                                    <div class="presupuesto-show__opciones">
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="chispas" data-price="20000">
+                                            <span class="opcion-button">Chispas</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="plataforma-360" data-price="90000">
+                                            <span class="opcion-button">Plataforma 360</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="laseres" data-price="15000">
+                                            <span class="opcion-button">Láseres</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="pechera-led" data-price="30000">
+                                            <span class="opcion-button">Pechera LED</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="limbo-led" data-price="10000">
+                                            <span class="opcion-button">Limbo LED</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="servicios-adicionales" value="cuadro-led" data-price="10000">
+                                            <span class="opcion-button">Cuadro LED</span>
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="presupuesto-show__item-box item-box--precio">
+                                    <p class="presupuesto-show__precio">Precio estimado: <span id="totalPrice" style="color: #dddddd; font-weight: 500;">$0</span><span style="font-size: 15px; vertical-align: text-top;">*</span></p>
+                                    <p class="presupuesto-show__precio-bottom">* Pueden aplicarse costos adicionales por traslado de equipos dependiendo de la ubicación de tu evento.</p>
+                                </div>
+
+
+
+                                <div class="presupuesto-show__item-box">
+                                    <div class="presupuesto-show__pregunta">
+                                        <p>(OPCIONAL)</p>
+                                        <label for="presupuesto__fecha">¿Tenés una fecha?</label>
+                                    </div>
+                                    <div class="presupuesto__fecha-box">
+                                        <input type="date" id="presupuesto__fecha" name="fecha-evento">
+                                        <label for="presupuesto__fecha">
+                                            <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 10H21M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--TEXTAREA-->
+                                <div class="presupuesto-show__item-box">
+                                    <div class="presupuesto-show__pregunta">
+                                        <p>(OPCIONAL)</p>
+                                        <label>Contanos tu idea</label>
+                                    </div>
+                                    <div class="presupuesto__textarea-box">
+                                        <textarea name="" id="presupuesto__textarea" placeholder="Ej: Quiero un show con un par de ideas locas..." rows= 4></textarea>
+                                    </div>
+                                </div>
+                                <!--=========-->
+                                <div class="presupuesto-show__button-container">
+                                    <button class="presupuesto-show__button" type="button" onclick="window.open('https://wa.me/5491135152227', '_blank')">
+                                        <p>Reservar</p>
+                                        <svg fill="#fff" width="35px" height="35px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <title>whatsapp</title>
+                                            <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path>
+                                        </svg>
+                                    </button>
+                                    <p class="presupuesto-show__button-bottom">🕒 Solemos contestar en unos minutos.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                        <div id="formEmprender" class="presupuesto__box-emprender oculto">
+                            <div class="presupuesto-show__item-box">
+                                <div class="presupuesto-show__pregunta">
+                                    <label>¿Qué producto te interesa?</label>
+                                </div>
+                                <div class="presupuesto-show__opciones">
+                                    <label>
+                                        <input type="checkbox" name="producto" value="traje-completo">
+                                        <span class="opcion-button">Traje completo</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="producto" value="laseres">
+                                        <span class="opcion-button">Láseres</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="producto" value="pechera-led">
+                                        <span class="opcion-button">Pechera LED</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="producto" value="limbo-led">
+                                        <span class="opcion-button">Limbo LED</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="producto" value="cuadro-led">
+                                        <span class="opcion-button">Cuadro LED</span>
+                                    </label>
+                                </div>
+                            </div>
+                        
+                            <div class="presupuesto-show__item-box">
+                                <div class="presupuesto-show__pregunta">
+                                    <label>Contanos tu idea:</label>
+                                </div>
+                                <div class="presupuesto__textarea-box">
+                                    <textarea id="presupuesto__textarea" placeholder="Ej: Necesito armar un traje con estilo depredador." maxlength="200" rows="4" ></textarea>
+                                </div>
+                            </div>
+                        
+                            <div class="presupuesto-show__button-container">
+                                <button class="presupuesto-show__button" type="button">
+                                    <p>Consultar</p>
+                                    <svg fill="#fff" width="35px" height="35px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <title>whatsapp</title>
+                                        <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path>
+                                    </svg>
+                                </button>
+                                <p class="presupuesto-show__button-bottom">🕒 Solemos contestar en unos minutos.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer id="footer">
+        <div class="footer__flex-container">
+            <div class="footer__box">
+                <h3 class="footer__section-title">REDES</h3>
+                <ul class="footer__section-list" style="color: #999;">
+                    <li class="footer__list-item"><a href="https://www.instagram.com/android_show_led/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/iconos-footer/ig-icon.png" alt="" class="icon-ig"></a>18.7k</li>
+                    <li class="footer__list-item"><a href="https://m.facebook.com/androidshowledproducciones/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/iconos-footer/fb-icon.png" alt="" class="icon-fb"></a>2.9k</li>
+                </ul>
+            </div>
+            <div class="footer__box">
+                <h3 class="footer__section-title">SITIO DESARROLLADO POR</h3>
+                <ul class="footer__section-list" style="line-height: 1.5;">
+                    <li class="footer__list-item" style="font-style: italic ;">Walter Mansilla</li>
+                    <li class="footer__list-item"">¿Queres una web como esta?
+                        <a href="https://wa.me/5493456023759" class="button-developer" style="margin-top: 4px;">Contactame</a></li>
+                </ul>
+            </div>
+            <div class="footer__box box--bottom">
+                <div class="footer__logo-container">
+                    <img src="/imagenes/asl-logo-original.jpg" alt="">
+                </div>
+                <div class="footer__logo-bottom">
+                    <h3 style="margin-bottom: 5px;">SHOW ROBOT LED</h3>
+                    <p>🔥100% baile e interacción</p>
+                    <p>🤖Servicio exclusivo 🇦🇷</p>
+                    <p>👽Venta de trajes led👾</p>
+                    <p>💫 Plataforma 360º Video Booth</p>
+                    <p style="margin-top: 20px; font-weight: 700;">¿Necesitas ayuda?</p>
+                    <p style="font-weight: 300; margin-bottom: 3px;">¡Escribinos directamente por WhatsApp!</p>
+                </div>
+                <a href="https://wa.me/5491135152227" class="button-whatsapp-contacto">
+                    <img src="/imagenes/iconos-footer/wsp-icon.png" alt="">
+                    <p>Contacto</p>
+                </a>
+            </div>
+            <div class="footer__copyrigth-bottom">
+                <p>© 2013 – 2025 Android Show Led</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
