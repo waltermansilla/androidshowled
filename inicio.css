@@ -33,7 +33,7 @@
 
 .slogan-robot__logo > img {
     max-width: 90%;
-    width: 450px;
+    width: 400px;
 
     -webkit-animation: flicker-in-1 2s linear both;
             animation: flicker-in-1 2s linear both;
@@ -42,13 +42,15 @@
 .slogan-robot__robot {
     padding: 40px 0 10px 0;
     box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.slogan-robot__robot.visible {
+    opacity: 1;
 }
 
 .slogan-robot__robot > img {
     width: 100%;
-    opacity: 0;
-    transform: translateY(30px); /* Comienza desde abajo */
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     mask-image: 
         linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), /* izquierda y derecha */
         linear-gradient(to top, transparent 0%, black 50%);                    /* abajo */
@@ -64,9 +66,6 @@
     background-color: #000;
     max-width: 100%;
     margin-top: -20px;
-    opacity: 0;
-    transform: translateY(30px); /* Comienza desde abajo */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .inicio__counter-content {

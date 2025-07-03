@@ -4,12 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
     <link rel="stylesheet" href="styles.css">
-    <style class="inter">
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        #sectionPC {
+            display: none;
+        }
+
+        @media (min-width: 450px) {
+            body > *:not(#sectionPC) {
+                display: none;
+            }
+
+            #sectionPC {
+                background-color: #070707;
+                font-family: sans-serif;
+                height: 100dvh;
+                width: 100dvw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+                padding: 0 40px;
+            }
+
+            .sectionPC__logo-container img {
+                width: 13dvw;
+                animation: parpadeo 1.2s infinite alternate ease-in-out;
+            }
+            @keyframes parpadeo {
+                from {
+                    opacity: 0.9;
+                }
+                to {
+                    opacity: 0.3;
+                }
+            }
+
+            .sectionPC__text-container {
+                color: #bbb;
+                text-align: center;
+            }
+            h1 {
+                font-size: 38px;
+                font-weight: 600;
+            }
+            p {
+                font-size: 20px;
+                font-weight: 300;
+                padding-top: 7px;
+            }
+        }
+
     </style>
     <title>Android Show Led</title>
 </head>
 <body>
+    <div id="sectionPC">
+        <div class="sectionPC__logo-container">
+            <img src="/imagenes/asl-slogan.jpg" alt="Logo de Android Show Led">
+        </div>
+        <div class="sectionPC__text-container">
+            <h1>Sitio web solo disponible para celular</h1>
+            <p>Pronto estará lista para computadoras y tablets. ¡Gracias por tu paciencia! 🙌</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
     <header>
         <nav id="nav">
             <div id="nav__content">
@@ -23,7 +90,9 @@
                         <button id="btnHamburgerInicio" style="--i:1" type="button">Inicio</button>
                         <button id="btnHamburgerShows" style="--i:2" type="button">Shows para vos</button>
                         <button id="btnHamburgerEmprende" style="--i:3" type="button">Emprendé</button>
-                        <button id="btnHamburgerGaleria" style="--i:4" type="button">Galería de fotos</button>
+                        <button id="btnHamburgerGaleria" style="--i:4; color: #666; pointer-events: none;" type="button">Galería de fotos 
+                            <span style="color: #956; font-size: 12px; opacity: 0.92;">¡PRÓXIMAMENTE!</span>
+                        </button>
                         
                         <button id="btnHamburgerCotiza" style="--i:5" type="button">Cotizá tu presupuesto 
                             <p class="mini-texto">¡En segundos! <span style="color: #bbb;">15% OFF</span></p></button> <br>
@@ -43,21 +112,12 @@
                             </div>
                         </div>
                     </div>
-                        <!--
-                        inicio
-                        shows
-                        emprende
-                        galeria
-                        cotiza tu presupuesto (abajo chico: lo tenes en unos segundos)
-                                        
-                        (boton "contacto" con icono como el de footer)
-                        (iconos ig, fb)
-                                        
-                        linea 70% / Texto gris
-                        Sitio desarrollado por Walter Mansilla
-                        Queres una web? Contactame
-                        -->
                 </div>
+
+
+
+
+
                 <div id="logoNav" class="nav__logo">
                     <a href="index.html">
                         <img src="imagenes/asl-slogan.jpg" alt="">
@@ -77,9 +137,9 @@
                     <div class="inicio__slogan-robot-container">
                         <div class="inicio__slogan-robot-content">
                             <div class="slogan-robot__logo">
-                                <img src="imagenes/asl-logo.jpeg" alt="">
+                                <img id="logoInicio" src="imagenes/asl-logo.jpeg" alt="">
                             </div>
-                            <div class="slogan-robot__robot">
+                            <div id="robotInicio" class="slogan-robot__robot">
                                 <img src="imagenes/asl-robotx3real.jpeg" alt="">
                             </div>
                         </div>
@@ -87,11 +147,11 @@
                     <div class="inicio__counter-container">
                         <div class="inicio__counter-content">
                             <div class="counter__item counter-1">
-                                <p class="counter-item__number">+000</p>
+                                <p class="counter-item__number" data-numero="500">+0</p>
                                 <p class="counter-item__text">Shows</p>
                             </div>
                             <div class="counter-item counter-2">
-                                <p class="counter-item__number">+000000</p>
+                                <p class="counter-item__number" data-numero="200000">+0</p>
                                 <p class="counter-item__text">Público total</p>
                             </div>
                         </div>
@@ -112,7 +172,10 @@
                     <!-- img, "vibrá, sentí" -->
                     <div class="shows__img-description-container container--img-text-description">
                         <div class="img-description__img">
-                            <img src="show-celu.jpg" alt="">
+                            <div class="img-video-animation-container">
+                                <img class="img-show-animation" src="show-celu.jpg" alt="">
+                                <video class="video-show-animation" src="Videos testimonios/VID1.mp4" autoplay muted loop playsinline></video>
+                            </div>
                         </div>
                         <div class="img-description__text">
                             <h3>Luces, <br>cámara, <br><span>'¡robot!'</span></h3>
@@ -127,22 +190,22 @@
                         <div class="shows__services-content">
 
                             <div class="shows__service">
-                                <div class="service-img">
+                                <div class="service-img anim-fade-up">
                                     <img src="show.jpeg" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h4 class="subtitle-h4 ">Robots</h4>
-                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                    <h4 class="subtitle-h4 anim-fade-up">Robots</h4>
+                                    <p class="paragraph paragraph--gray anim-fade-up">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
                                 </div>
                             </div>
 
                             <div class="shows__service">
-                                <div class="service-img">
+                                <div class="service-img anim-fade-up">
                                     <img src="show.jpeg" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h4 class="subtitle-h4 ">Chispas frías</h4>
-                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                    <h4 class="subtitle-h4 anim-fade-up">Chispas frías</h4>
+                                    <p class="paragraph paragraph--gray anim-fade-up">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
                                 </div>
                             </div>
 <!--
@@ -151,8 +214,8 @@
                                     <img src="" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h4 class="subtitle-h4 ">Plataforma 360</h4>
-                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                    <h4 class="subtitle-h4 anim-fade-up">Plataforma 360</h4>
+                                    <p class="paragraph paragraph--gray anim-fade-up">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
                                 </div>
                             </div>
 
@@ -161,8 +224,8 @@
                                     <img src="" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h4 class="subtitle-h4 ">Robots</h4>
-                                    <p class="paragraph paragraph--gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
+                                    <h4 class="subtitle-h4 anim-fade-up">Robots</h4>
+                                    <p class="paragraph paragraph--gray anim-fade-up">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus <span class="paragraph--white">fugit amet nulla!</span> Nesciunt quaerat sequi laboriosam commodi dolorem, quisquam ipsa doloremque, eveniet aliquam assumenda repellat totam atque quibusdam vero.</p>
                                 </div>
                             </div>
 -->
@@ -172,10 +235,10 @@
                     <!-- Button x2* -->
                     <div class="shows__buttons-container">
                         <div class="shows__button">
-                            <a class="button-gallery">Explorá nuestra galería ›</a> <!-- boton transparente, borde y letra celeste -->
+                            <a class="button-gallery anim-fade-up">Explorá nuestra galería ›</a> <!-- boton transparente, borde y letra celeste -->
                         </div>
                         <div class="shows__button">
-                            <a href="#presupuesto__box" class="button-budget button-budget--shows">
+                            <a href="#presupuesto__box" class="button-budget button-budget--shows anim-fade-up">
                                 <p>Cotizá tu</p>
                                 <p>presupuesto</p>
                             </a>
@@ -191,25 +254,29 @@
             <div class="testimonios__container">
                 <div class="testimonios__content">
                     <div class="testimonios__title">
-                        <h2 class="subtitle-h2 paragraph--white">Aprobado por <br>los que saben de <br><span class="text-green">espectáculo.</span></h2>
+                        <h2 class="subtitle-h2 paragraph--white">
+                            <span class="anim-fade-up">Aprobado por </span><br>
+                            <span class="anim-fade-up">los que saben de </span><br>
+                            <span class="text-green anim-fade-up">espectáculo.</span>
+                        </h2>
                     </div>
                     <div class="testimonios__gallery">
                         <div class="gallery__column">
-                            <img src="imagenes/img-testimonios/1.jpg" alt="">
-                            <img src="imagenes/img-testimonios/2.jpg" alt="">
-                            <img src="imagenes/img-testimonios/3.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/1.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/2.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/3.jpg" alt="">
                         </div>
                         <div class="gallery__column">
-                            <img src="imagenes/img-testimonios/4.jpg" alt="">
-                            <img src="imagenes/img-testimonios/5.jpg" alt="">
-                            <img src="imagenes/img-testimonios/6.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/4.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/5.jpg" alt="">
+                            <img class="anim-fade-up" src="imagenes/img-testimonios/6.jpg" alt="">
                         </div>
                     </div>
 
                     <!-- Testimonios en videos -->
                     <div class="testimonios__videos-subtitle">
-                        <h4 class="subtitle-h4">Te lo cuentan ellos.</h4>
-                        <a class="button-gallery" style="font-size: 1rem;">Ver galería completa ›</a>
+                        <h4 class="subtitle-h4 anim-fade-up">Te lo cuentan ellos.</h4>
+                        <a class="button-gallery anim-fade-up" style="font-size: 1rem;">Ver galería completa ›</a>
                     </div>
                     <div class="testimonios__videos-container">
                         <div class="testimonios__spacer"></div>
@@ -300,12 +367,13 @@
                     </div>
 
                     <div class="testimonios__bottom">
-                        <h4 class="testimonios__text subtitle-h4 paragraph--gray">
-                            Ahora es tu turno. <br>¿Listo para <span class="text-green" style="opacity: 1; padding: 0;">brillar</span>?
-                        </h4>
+                        <div class="testimonios__text subtitle-h4 paragraph--gray">
+                            <p class="anim-fade-up">Ahora es tu turno.</p> 
+                            <p class="anim-fade-up">¿Listo para <span class="text-green" style="opacity: 1; padding: 0;">brillar</span>?</p>
+                        </div>
                     </div>
                     <div class="testimonios__buttons">
-                        <button type="button" href="#presupuesto__box" class="button-budget button-budget--testimonios">
+                        <button type="button" href="#presupuesto__box" class="button-budget button-budget--testimonios anim-fade-up">
                             <p>Cotizá tu</p>
                             <p>presupuesto</p>
                         </button>
@@ -319,40 +387,44 @@
             <div class="emprende__container">
                 <div class="emprende__content">
                     <div class="emprende__title-container ">
-                        <h2 class="subtitle-h2 paragraph--gray">¿Querés armar <br>tu propio <br><span class="text-gradient">robot LED</span>?</h2>
+                        <h2 class="subtitle-h2 paragraph--gray">
+                            <span class="anim-fade-up">¿Querés armar </span><br>
+                            <span class="anim-fade-up">tu propio </span><br>
+                            <span class="anim-fade-up"><span class="text-gradient">robot LED</span>?</span>
+                        </h2>
                     </div>
                     <div class="emprende__description-container">
                         <!--<p class="paragraph paragraph--white" style="padding-bottom: 10px;">¿Pensabas que solo hacíamos shows?</p>-->
-                        <p class="paragraph paragraph--gray"><span class="paragraph--white">¿Pensabas que solo hacíamos shows?</span>También diseñamos y fabricamos todo tu equipamiento LED.</p>
-                        <p class="paragraph paragraph--gray">Lo fabricamos todo desde nuestro taller: <span class="paragraph--white">desde los trajes LED hasta los accesorios que harán que tus shows exploten</span>, como guantes láser, limbo LED, cuadros LED y chispas frías.</p>
-                        <p class="paragraph paragraph--gray">Tambien te proveemos herramientas adicionales: los <span class="paragraph--white">zancos</span> que necesitás e incluso la <span class="paragraph--white">famosa plataforma 360</span>.</p>
-                        <p class="paragraph paragraph--white">Todo para vos. Todo para que puedas emprender.</p>
+                        <p class="paragraph paragraph--gray anim-fade-up"><span class="paragraph--white">¿Pensabas que solo hacíamos shows?</span>También diseñamos y fabricamos todo tu equipamiento LED.</p>
+                        <p class="paragraph paragraph--gray anim-fade-up">Lo fabricamos todo desde nuestro taller: <span class="paragraph--white">desde los trajes LED hasta los accesorios que harán que tus shows exploten</span>, como guantes láser, limbo LED, cuadros LED y chispas frías.</p>
+                        <p class="paragraph paragraph--gray anim-fade-up">Tambien te proveemos herramientas adicionales: los <span class="paragraph--white">zancos</span> que necesitás e incluso la <span class="paragraph--white">famosa plataforma 360</span>.</p>
+                        <p class="paragraph paragraph--white anim-fade-up">Todo para vos. Todo para que puedas emprender.</p>
                     </div>
 
                     <div class="emprende__tips-container">
-                        <div class="emprende__tip">
+                        <div class="emprende__tip anim-fade-up">
                             <img class="emprende__icons" style="width: 24px;" src="imagenes/iconos-emprende/rayo.png" alt="">
                             <p class="paragraph text-gradient">Modelos listos para usar.</p>
                             <p class="paragraph paragraph--gray">Solo encendés y ¡a brillar!</p>
                         </div>
-                        <div class="emprende__tip">
+                        <div class="emprende__tip anim-fade-up">
                             <img class="emprende__icons" style="width: 32px;" src="imagenes/iconos-emprende/mas.png" alt="">
                             <p class="paragraph text-gradient">Añadí extras.</p>
                             <p class="paragraph paragraph--gray">Podés sumar gran variedad de accesorios</p>
                         </div>
-                        <div class="emprende__tip">
+                        <div class="emprende__tip anim-fade-up">
                             <img class="emprende__icons" style="width: 39px;" src="imagenes/iconos-emprende/envios.png" alt="">
                             <p class="paragraph text-gradient">Envíos a todo el país.</p>
                             <p class="paragraph paragraph--gray">Desde nuestro taller hasta tu casa</p>
                         </div>
-                        <div class="emprende__tip">
+                        <div class="emprende__tip anim-fade-up">
                             <img class="emprende__icons" style="width: 39px;" src="imagenes/iconos-emprende/asesoramiento.png" alt="">
                             <p class="paragraph text-gradient">Asesoramiento personalizado.</p>
                             <p class="paragraph paragraph--gray">Te guiamos paso a paso cómo usar nuestros productos, cómo hacer para que tu fiesta explote, y tips de marketing.</p>
                         </div>
                     </div>
                     <div class="emprende__button">
-                        <button id="btnIrAEmprender" class="button-emprender">
+                        <button id="btnIrAEmprender" class="button-emprender anim-fade-up">
                             <p>Quiero emprender</p>
                             <p>➔</p>
                         </button>
@@ -365,7 +437,7 @@
         <section id="presupuesto">
             <div class="presupuesto__container">
                 <div class="presupuesto__content">
-                    <h2 class="presupuesto__title subtitle-h2 paragraph--gray">Calculá tu presupuesto</h2>
+                    <h2 class="presupuesto__title subtitle-h2 paragraph--gray anim-fade-up">Calculá tu presupuesto</h2>
                     <form id="presupuesto__box">
 
                         <div class="presupuesto__box-title">
@@ -388,24 +460,26 @@
                                 </div>
                                 <div class="presupuesto-show__opciones">
                                     <label>
-                                        <input type="radio" name="tipo-evento" value="casamiento" data-price="0">
+                                        <input type="radio" name="tipo-evento" value="Casamiento" data-price="0">
                                         <span class="opcion-button">Casamiento</span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="tipo-evento" value="cumpleanios" data-price="0">
+                                        <input type="radio" name="tipo-evento" value="Cumpleaños" data-price="0">
                                         <span class="opcion-button">Cumpleaños</span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="tipo-evento" value="despedida" data-price="0">
+                                        <input type="radio" name="tipo-evento" value="Despedida" data-price="0">
                                         <span class="opcion-button">Despedida</span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="tipo-evento" value="niños" data-price="0">
+                                        <input type="radio" name="tipo-evento" value="Niños" data-price="0">
                                         <span class="opcion-button">Niños</span>
                                     </label>
                                     <label>
-                                        <input class="otro-evento" type="radio" name="tipo-evento" value="otro" data-price="0">
-                                        <span class="opcion-button">Otro <input class="otro-evento__input" type="text" placeholder="Tipo de evento"></span>
+                                        <input class="otro-evento" type="radio" name="tipo-evento" value="Otro" data-price="0">
+                                        <span class="opcion-button">Otro 
+                                            <input class="otro-evento__input" type="text" placeholder="Tipo de evento">
+                                        </span>
                                     </label>
                                     
                                 </div>
@@ -441,8 +515,8 @@
                                             <span class="opcion-button">6</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="cantidad-robots" value="payaso-led" data-price="80000">
-                                            <span class="opcion-button">Payaso LED</span>
+                                            <input type="checkbox" name="cantidad-robots" value="Payaso Terror" data-price="80000">
+                                            <span class="opcion-button">Payaso Terror</span>
                                         </label>
                                     </div>
                                 </div>
@@ -455,27 +529,27 @@
                                     </div>
                                     <div class="presupuesto-show__opciones">
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="chispas" data-price="20000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Chispas" data-price="20000">
                                             <span class="opcion-button">Chispas</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="plataforma-360" data-price="90000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Plataforma 360" data-price="90000">
                                             <span class="opcion-button">Plataforma 360</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="laseres" data-price="15000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Laseres" data-price="15000">
                                             <span class="opcion-button">Láseres</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="pechera-led" data-price="30000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Pechera LED" data-price="30000">
                                             <span class="opcion-button">Pechera LED</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="limbo-led" data-price="10000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Limbo LED" data-price="10000">
                                             <span class="opcion-button">Limbo LED</span>
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="servicios-adicionales" value="cuadro-led" data-price="10000">
+                                            <input type="checkbox" name="servicios-adicionales" value="Cuadro LED" data-price="10000">
                                             <span class="opcion-button">Cuadro LED</span>
                                         </label>
 
@@ -514,7 +588,7 @@
                                 </div>
                                 <!--=========-->
                                 <div class="presupuesto-show__button-container">
-                                    <button class="presupuesto-show__button" type="button" onclick="window.open('https://wa.me/5491135152227', '_blank')">
+                                    <button class="presupuesto-show__button" id="btnEnviarWsp" type="button">
                                         <p>Reservar</p>
                                         <svg fill="#fff" width="35px" height="35px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                             <title>whatsapp</title>

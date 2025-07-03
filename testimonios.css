@@ -20,7 +20,7 @@
 .text-green {
     color: greenyellow;
     text-shadow: 0 0 40px greenyellow;
-    padding: 40px;
+    margin: 0px;
     opacity: 0;
 }
 

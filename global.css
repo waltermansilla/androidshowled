@@ -35,6 +35,10 @@ body {
     TITULOS, SUBTITULOS Y PARRAFOS 
 ====================================*/
 
+h2 > span { /* Necesario para que funcione bien la animacion anim-fade-up */
+    display: inline-block;
+}
+
 .subtitle-h2 {
     font-size: 38px;
     font-weight: 600;
@@ -163,3 +167,36 @@ body {
     margin: 0 auto;
     width: 82px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*======================================
+            ANIMACIONES
+=======================================*/
+
+
+/* Fade-in/Slide-up (Aparicion desde abajo) Para elementos múltiples */
+
+.anim-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.anim-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+

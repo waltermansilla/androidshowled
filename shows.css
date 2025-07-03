@@ -11,6 +11,7 @@
 .shows__img-description-container {
     height: 200vh;
     position: relative;
+    margin-top: 120px;
 }
 
 .img-description__img {
@@ -24,14 +25,39 @@
     align-items: center;
 }
 
-.img-description__img > img {
+.img-video-animation-container {
+    position: relative;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     transform: scale(1);
+    transition: transform 0.1s linear;
+}
+
+.img-video-animation-container > img {
+    width: 100%;
+    
     opacity: 1;
     object-fit: cover;
     mask-image: linear-gradient(to top, transparent 0%,black 20%);
+    position: relative;
+    z-index: 0;
 }
 
+.img-video-animation-container > video {
+    position: absolute;
+    top: 34%;
+    left: 49.75%;
+    transform: translateX(-50%);
+    width: 33.65%;
+    height: 32%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 1px;
+}
 
 
 /* Texto animado de la imagen animada */

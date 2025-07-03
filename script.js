@@ -1,27 +1,68 @@
-/* window.addEventListener("scroll", function () {
-    let robot = document.querySelector(".robot-inicio");
-    let scrollY = window.scrollY;
 
-    if (scrollY > 5000) { 
-        robot.style.backgroundAttachment = "scroll"; // La imagen se mueve con el contenido
-    } else { 
-        robot.style.backgroundAttachment = "fixed"; // La imagen se mantiene fija
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.getElementById("logoInicio");
+    const robot = document.getElementById("robotInicio");
 
+    window.addEventListener("scroll", () => {
+        const logoTop = logo.getBoundingClientRect().top;
 
-
-window.addEventListener("scroll", function () {
-    let img = document.querySelector(".robot-inicio img");
-    let scroll = window.scrollY;
-
-    if (scroll > 500) {
-        img.style.cssText = "position: fixed; width: 65%; top: 50%; left: 51%; translate: -50% -50%;";
-    } else {
-        img.style.cssText = "position: relative; width: 100%; top: ; left: ; translate: ;";
-    }
+        if (logoTop <= 120) {
+            robot.classList.add("visible");
+        }
+    });
 })
-    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===========================================================
+ANIMACION FADE-IN/SLIDE-UP (Aparicion de elementos desde abajo)
+============================================================*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const element = document.querySelectorAll(".anim-fade-up");
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                if (entry.boundingClientRect.bottom > window.innerHeight) {
+                    entry.target.classList.remove("visible");
+                }
+            }
+        })
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    element.forEach(elem => {
+        observer.observe(elem);
+    })
+})
+/*==================== FIN FADE-IN/SLIDE-UP ===================*/
+
+
+
+
+
+
+
+
 
 document.addEventListener("scroll", actualizarRecorte);
 window.addEventListener("resize", actualizarRecorte);
@@ -45,40 +86,72 @@ function actualizarRecorte() {
     }
 };
 
-document.addEventListener("scroll", () => {
-    const img = document.querySelector(".slogan-robot__robot > img");
-    const scrollY = window.scrollY; 
-    const startReveal = 90; // Altura en la que aparece la imagen
 
-    if (scrollY >= startReveal) {
-        img.style.opacity = "1"; // Hace que se haga visible
-        img.style.transform = "translateY(0)"; // La imagen sube hasta su posición
+
+
+/*=================================================================
+CONTADOR AUTOMATICO DE NUM SHOWS Y PUBLICO TOTAL (SECCION "INICIO")
+==================================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-item__number');
+
+  // Creo el observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                contarHasta(entry.target);        // cuando entra en pantalla, cuenta
+                observer.unobserve(entry.target); // deja de observarlo (para que no vuelva a contar)
+            }
+        });
+    }, {
+    threshold: 0.5 // cuando el 50% del elemento está visible
+    });
+
+  // Observar cada número
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
+  // Conteo animado
+    function contarHasta(elemento) {
+        const numeroFinal = parseInt(elemento.dataset.numero);
+        let actual = 0;
+        const duracion = 1400; // en milisegundos
+        const intervalito = 10; // cada cuánto se actualiza
+        const totalPasos = duracion / intervalito;
+        let pasoActual = 0;
+
+        const intervalo = setInterval(() => {
+            pasoActual++;
+            // easing cúbico suave: arranca rápido, frena al final
+            const progreso = pasoActual / totalPasos;
+            const easing = 1 - Math.pow(1 - progreso, 3.5); // Modificar el ultimo num para cambiar lentitud al final
+            actual = Math.floor(numeroFinal * easing);
+
+            if (actual >= numeroFinal || pasoActual >= totalPasos) {
+                actual = numeroFinal;
+                clearInterval(intervalo);
+            }
+            elemento.textContent = `+${actual.toLocaleString('es-AR')}`;
+        }, intervalito);
     }
-});
-
-document.addEventListener("scroll", () => {
-    const img = document.querySelector(".inicio__counter-container");
-    const scrollY = window.scrollY; 
-    const startReveal = 600; // Altura en la que aparece la imagen
-
-    if (scrollY >= startReveal) {
-        img.style.opacity = "1"; // Hace que se haga visible
-        img.style.transform = "translateY(0)"; // La imagen sube hasta su posición
-    }
-});
-
-/*
-document.addEventListener("scroll", () => {
-    const img = document.querySelector(".img-description__img > img");
-    const contenedor = document.querySelector(".shows__img-description-container");
-    const scroll = window.scrollY;
-    const startScroll = 
 })
-*/
+
+/* =========================== FIN CONTADOR =========================== */
+
+
+
+
+
+
+
+
+
 
 
 document.addEventListener("scroll", () => {
-    const img = document.querySelector(".img-description__img > img");
+    const contenedorAnimado = document.querySelector(".img-video-animation-container");
     const contenedor = document.querySelector(".shows__img-description-container");
 
     const rect = contenedor.getBoundingClientRect();
@@ -93,11 +166,11 @@ document.addEventListener("scroll", () => {
     // Escala interpolada de 3.2 a 1
     const escala = 3.7 - (3.7 - 1) * clamped;
 
-    img.style.transform = `scale(${escala})`;
+    contenedorAnimado.style.transform = `scale(${escala})`;
 });
 
 document.addEventListener("scroll", () => {
-    const img = document.querySelector(".img-description__img > img");
+    const img = document.querySelector(".img-description__img img");
     const texto = document.querySelector(".img-description__text > h3");
     const contenedor = document.querySelector(".shows__img-description-container");
 
@@ -108,8 +181,32 @@ document.addEventListener("scroll", () => {
     const progress = scrollPos / (end - start); // entre 0 y 1
 
     // Aplicar opacidades basadas en el progreso
-    texto.style.opacity = Math.max(0, 1 - progress); // de 1 a 0
-    img.style.opacity = 0.6 + 0.4 * progress; // de 0.8 a 1
+    texto.style.opacity = Math.max(0, 1 - progress);
+    img.style.opacity = 0.6 + 0.4 * progress;
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector('.video-show-animation');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play().catch(err => {
+                    console.log("Error al reproducir video:", err);
+                });
+            } else {
+                video.pause();
+            }
+        });
+    },
+    {
+        threshold: 0.1
+    });
+
+    observer.observe(video);
 });
 
 
@@ -119,15 +216,21 @@ document.addEventListener("scroll", () => {
 
 
 
-/* Texto verde de seccion "Testimonios". Agrega la clase "visible" que contiene animación CSS. */
+/* Texto verde de Testimonios ("espectáculo"). Agrega la clase "visible" que contiene animación CSS. */
 
-window.addEventListener('scroll', () => {
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const texto = document.querySelector('.text-green');
-    const rect = texto.getBoundingClientRect();
+    const observador = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            texto.classList.add('visible');
+        };
+    }, {
+        threshold: 0,
+    });
 
-    if (rect.top < 600) {
-        texto.classList.add('visible');
-    }
+    observador.observe(texto);
 });
 
 
@@ -397,4 +500,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.getElementById("btnEnviarWsp").addEventListener("click", function () {
+    const numero = "543456023759";
+
+  // Evento
+    const eventoSeleccionado = document.querySelector('input[name="tipo-evento"]:checked');
+    let tipoEvento = eventoSeleccionado?.value || "";
+    if (tipoEvento.toLowerCase() === "otro") {
+        const otroInput = document.querySelector(".otro-evento__input");
+        tipoEvento = otroInput?.value?.trim() || "Otro (sin especificar)";
+    }
+
+    // Robots
+    const robotsSeleccionados = Array.from(document.querySelectorAll('input[name="cantidad-robots"]:checked'))
+        .map(el => el.value)
+        .join(", ");
+
+    // Adicionales (uno por línea y en negrita)
+    const adicionalesSeleccionados = Array.from(document.querySelectorAll('input[name="servicios-adicionales"]:checked'))
+        .map(el => `     • ${el.value.replace("-", " ")}`)
+        .join("\n");
+
+    // Fecha formateada (de yyyy-mm-dd a dd/mm/yyyy)
+    const rawFecha = document.getElementById("presupuesto__fecha").value;
+    let fechaFormateada = "";
+
+    if (rawFecha) {
+        const fechaObj = new Date(rawFecha + "T00:00:00");
+        const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        const diaSemana = diasSemana[fechaObj.getDay()];
+
+        const dia = String(fechaObj.getDate()).padStart(2, "0");
+        const mes = String(fechaObj.getMonth() + 1).padStart(2, "0");
+        const año = fechaObj.getFullYear();     
+        fechaFormateada = `${diaSemana} ${dia}/${mes}/${año}`;
+    }
+
+
+    // Idea
+    const idea = document.getElementById("presupuesto__textarea").value.trim();
+
+    // Precio
+    const precio = document.getElementById("totalPrice").textContent.trim();
+
+    // 🧾 Mensaje armado
+    let mensaje = `*¡Hola Seba! Generé este presupuesto desde tu página web, para un show LED:*\n\n`;
+
+    mensaje += `📅 *Evento:* ${tipoEvento || "No especificado"}\n`;
+    mensaje += `─────────────────\n`;
+
+    mensaje += `🤖 *Robots:* ${robotsSeleccionados || "No seleccionado"}\n`;
+    mensaje += `─────────────────\n`;
+
+    mensaje += `✨ *Adicionales:*\n${adicionalesSeleccionados || "• *Ninguno*"}\n`;
+    mensaje += `─────────────────\n`;
+
+    if (fechaFormateada) {
+        mensaje += `🗓 *Fecha:* ${fechaFormateada}\n`;
+        mensaje += `─────────────────\n`;
+    }
+
+    if (idea) {
+        mensaje += `📝 *Mi idea:*\n"${idea}"\n`;
+        mensaje += `─────────────────\n`;
+    }
+
+    mensaje += `\n💰 *Precio estimado: ${precio}*\n(Entiendo que debido al traslado de equipos, el precio puede variar dependiendo del lugar del evento)\n`;
+    mensaje += `\n🙏 ¡Gracias! Espero tu respuesta para confirmar disponibilidad.`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+});
+
+
+
+
+
+
+
+document.querySelector("#formEmprender button").addEventListener("click", function () {
+    const numero = "543456023759";  
+    // Productos seleccionados
+    const productos = Array.from(document.querySelectorAll('input[name="producto"]:checked'))
+        .map(el => `• *${el.nextElementSibling.textContent.trim()}*`)
+        .join("\n");  
+    // Idea
+    const idea = document.getElementById("presupuesto__textarea").value.trim(); 
+    // Mensaje final
+    let mensaje = `*¡Hola Seba! Vengo de tu página web y estoy interesado en productos LED para emprender:*\n\n`;   
+        mensaje += `🧩 *Productos seleccionados:*\n${productos || "• *Ninguno seleccionado*"}\n`;
+        mensaje += `─────────────────\n`;   
+    if (idea) {
+        mensaje += `💡 *Mi idea o necesidad:*\n"${idea}"\n`;
+        mensaje += `─────────────────\n`;
+    }   
+    mensaje += `\n📦 ¿Podrías pasarme más info y precios?\n🙏 ¡Gracias!`;   
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+});
 
