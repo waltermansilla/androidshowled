@@ -583,65 +583,70 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     // ───────── MENSAJE ─────────
     let mensaje = `*¡Hola Seba! Generé este presupuesto desde tu página web para un show LED:*\n\n`;
 
-    mensaje += `📅 *Evento:* ${tipoEvento || "No especificado"}\n`;
+    mensaje += `\u{1F4C5} *Evento:* ${tipoEvento || "No especificado"}\n`;
     mensaje += `─────────────────\n`;
 
-    mensaje += `🤖 *Robots:*\n${robotsSeleccionados}\n`;
+    mensaje += `\u{1F916} *Robots:*\n${robotsSeleccionados}\n`;
     mensaje += `─────────────────\n`;
 
-    mensaje += `✨ *Adicionales:*\n${adicionalesSeleccionados || "• Ninguno"}\n`;
+    mensaje += `\u2728 *Adicionales:*\n${adicionalesSeleccionados || "• Ninguno"}\n`;
     mensaje += `─────────────────\n`;
 
     if (fechaFormateada) {
-        mensaje += `🗓 *Fecha:* ${fechaFormateada}\n`;
+        mensaje += `\u{1F4C6} *Fecha:* ${fechaFormateada}\n`;
         mensaje += `─────────────────\n`;
     }
 
     if (idea) {
-        mensaje += `📝 *Mi idea:*\n"${idea}"\n`;
+        mensaje += `\u{1F4DD} *Mi idea:*\n"${idea}"\n`;
         mensaje += `─────────────────\n`;
     }
 
     // 🎁 DESCUENTO WEB
-    mensaje += `🎁 *Beneficio por reserva desde la web*\n`;
+    mensaje += `\u{1F381} *Beneficio por reserva desde la web*\n`;
     mensaje += `Descuento aplicado: 10%\n`;
     mensaje += `Código: ${codigoWeb}\n`;
     mensaje += `─────────────────\n`;
 
     // 💰 PRECIOS
-    mensaje += `💰 *Precio estimado*\n`;
+    mensaje += `\u{1F4B0} *Precio estimado*\n`;
     mensaje += `Precio base: ${precioTexto}\n`;
     mensaje += `Descuento web (-10%): $${descuentoAplicado}\n`;
     mensaje += `*Total con descuento web: $${precioFinal}*\n`;
     mensaje += `(Debido a traslados de equipos, el precio puede variar según lugar y logística del evento)\n\n`;
 
-    mensaje += `🙏 ¡Gracias! Espero tu respuesta para confirmar disponibilidad.`;
+    mensaje += `\u{1F64F} ¡Gracias! Espero tu respuesta para confirmar disponibilidad.`;
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 });
-
 
 
 
 document.querySelector("#formEmprender button").addEventListener("click", function () {
     const numero = "543456023759";  
+
     // Productos seleccionados
     const productos = Array.from(document.querySelectorAll('input[name="producto"]:checked'))
-        .map(el => `• *${el.nextElementSibling.textContent.trim()}*`)
+        .map(el => `\u2022 *${el.nextElementSibling.textContent.trim()}*`) // •
         .join("\n");  
+
     // Idea
     const idea = document.getElementById("presupuesto__textarea").value.trim(); 
+
     // Mensaje final
     let mensaje = `*¡Hola Seba! Vengo de tu página web y estoy interesado en productos LED para emprender:*\n\n`;   
-        mensaje += `🧩 *Productos seleccionados:*\n${productos || "• *Ninguno seleccionado*"}\n`;
-        mensaje += `─────────────────\n`;   
+
+    mensaje += `\u{1F9E9} *Productos seleccionados:*\n${productos || "\u2022 *Ninguno seleccionado*"}\n`;
+    mensaje += `─────────────────\n`;   
+
     if (idea) {
-        mensaje += `💡 *Mi idea o necesidad:*\n"${idea}"\n`;
+        mensaje += `\u{1F4A1} *Mi idea o necesidad:*\n"${idea}"\n`;
         mensaje += `─────────────────\n`;
     }   
-    mensaje += `\n📦 ¿Podrías pasarme más info y precios?\n🙏 ¡Gracias!`;   
+
+    mensaje += `\n\u{1F4E6} ¿Podrías pasarme más info y precios?\n\u{1F64F} ¡Gracias!`;   
+
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 });
-
