@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.getElementById("btnEnviarWsp").addEventListener("click", function () {
-    const numero = "543456023759";
+    const numero = "5491135152227";
 
     // ───────── CONFIG WEB ─────────
     const DESCUENTO_WEB = 0.10; // 10%
@@ -624,7 +624,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
 
 
 document.querySelector("#formEmprender button").addEventListener("click", function () {
-    const numero = "543456023759";  
+    const numero = "5491135152227";  
 
     // Productos seleccionados
     const productos = Array.from(document.querySelectorAll('input[name="producto"]:checked'))
