@@ -1,0 +1,174 @@
+#shows {
+    background-color: #000;
+    color: #eee;
+    scroll-margin-top: -960px;
+}
+
+
+
+/* Imagen animada */
+
+.shows__img-description-container {
+    height: 200vh;
+    position: relative;
+    margin-top: 120px;
+}
+
+.img-description__img {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden; /* Solo oculta el recorte de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-video-animation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(1);
+    
+}
+
+.img-video-animation-container > img {
+    width: 100%;
+    
+    opacity: 1;
+    object-fit: cover;
+    mask-image: linear-gradient(to top, transparent 0%,black 20%);
+    position: relative;
+    z-index: 0;
+}
+
+.img-video-animation-container > video {
+    position: absolute;
+    top: 34%;
+    left: 49.87%;
+    transform: translateX(-50%);
+    width: 34.75%;
+    height: 32%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 1px;
+}
+
+
+
+
+/* Texto animado de la imagen animada */
+
+.img-description__text {
+    position: absolute;
+    top: 340px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-description__text > h3 {
+    color: #ddd;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.img-description__text span {
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+.shows__img-paragraph {
+    margin: 0 auto;
+    margin-top: -100px;
+    width: 90%;
+    text-align: center;
+}
+
+
+
+/*==========================
+        SERVICIOS 
+===========================*/
+
+.shows__services-content {
+    padding-top: 100px;
+}
+
+.shows__service {
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+
+/* Imágenes */
+
+.service-img {
+    /* border: 1px solid green;*/
+    padding: 10px;
+}
+
+.service-img > img {
+    width: 100%;
+    border-radius: 30px;
+    
+}
+
+
+
+/* Texto */
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 1px solid red;*/
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 30px 10px 110px 10px;
+    width: 90%;
+    text-align: left;
+}
+/* h4, parrafo y span estan definidos en "global.css" */
+
+
+
+
+/*=======================
+        BOTONES
+========================*/
+
+.shows__buttons-container {
+    /* border: 1px solid red;*/
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 0 50px 0;
+}
+
+/* button-budget "Calcula tu presupuesto" original está definido en "global.css" */
+
+.button-gallery {
+    background-color: transparent;
+    color: rgb(0, 113, 227);
+    font-size: 1.2rem;
+    font-weight: 300;
+    border: none;
+}

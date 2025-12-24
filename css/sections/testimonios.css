@@ -1,0 +1,175 @@
+#testimonios {
+    background: linear-gradient(to bottom, #222, #0c0c0c, #222);
+}
+
+.testimonios__container {
+    width: 100%;
+}
+
+.testimonios__content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.testimonios__title {
+    padding: 100px 0 100px 0;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.text-green {
+    color: greenyellow;
+    text-shadow: 0 0 40px greenyellow;
+    margin: 0px;
+    opacity: 0;
+}
+
+.text-green.visible {
+    -webkit-animation: flicker-in-1 2s linear both;
+            animation: flicker-in-1 2s linear both;
+    opacity: 1;
+}
+
+
+
+.testimonios__gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 7px;
+}
+
+.gallery__column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonios__gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* AGREGAR GRADIENTE DE FONDO, Q ESTE GRIS PERO Q SE VEA NEGRO EN LA PARTE DE LOS VIDEOS SCROLL */
+
+.testimonios__videos-subtitle {
+    color: #fff;
+    margin: 90px 0 35px 25px; /*left 25px (gap + spacer)*/
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+}
+
+
+.testimonios__videos-container {
+    padding-top: 0px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+}
+/* Cada video tiene un spacer en left (10px gap + 15px spacer) */
+.testimonios__spacer { 
+    flex: 0 0 15px; 
+    scroll-snap-align: start; 
+}
+.testimonios__video-box {
+    /*border: 1px solid red;*/
+    flex: 0 0 75vw;
+    height: 100%;
+}
+.video-box__video {
+    /*border: 1px solid blue;*/
+    position: relative;
+    height: 75%;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+/* poster de los videos (antes de cargar video) */
+.video-poster {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.video-box__video > video {
+    /*border: 1px solid #ccc;*/
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}
+/* =====================================
+    Boton sonido/silencio (videos)
+======================================= */
+.btn-sonido {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.6;
+    background-color: #ddd;
+    color: #666;
+    font-size: 20px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 40px;
+    right: 25px;
+    bottom: 25px;
+}
+.svg-mute,
+.svg-volume {
+    width: 26px;
+    padding-top: 1px;
+}
+/*=====================================*/
+
+.video-box__p {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    padding: 25px 0;
+}
+.video-box__p > p {
+    color: #ccc;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+
+
+/* Texto final Testimonios y boton Cotizá */
+
+.testimonios__bottom {
+    width: 100%;
+    margin: 0 auto;
+    padding: 55px 0 45px 0;
+}
+
+.testimonios__text {
+    line-height: 1.1;
+    text-align: center;
+}
+
+
+
+.testimonios__buttons {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
