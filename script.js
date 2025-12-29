@@ -578,7 +578,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     const precioTexto = document.getElementById("totalPrice").textContent.trim();
     const precioNumerico = Number(precioTexto.replace(/[^\d]/g, ""));
     const descuentoAplicado = Math.round(precioNumerico * DESCUENTO_WEB);
-    const precioFinal = precioNumerico - descuentoAplicado;
+    const precioFinal = precioNumerico; /* - descuentoAplicado; */
 
     // ───────── MENSAJE ─────────
     let mensaje = `*¡Hola Seba! Generé este presupuesto desde tu página web para un show LED:*\n\n`;
