@@ -546,7 +546,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     )
         .map(el => el.value)
         .join(", ") +
-        "\nIncluye:\n- Cuadro LED\n- Limbo LED\n- Alas LED";
+        "\nIncluye:\n- Cuadro LED\n- Limbo LED\n- Alas LED\n- Pechera LED";
 
     // Adicionales
     const adicionalesSeleccionados = Array.from(
@@ -584,35 +584,38 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     let mensaje = `*¡Hola Seba! Generé este presupuesto desde tu página web para un show LED:*\n\n`;
 
     mensaje += `\u{1F4C5} *Evento:* ${tipoEvento || "No especificado"}\n`;
-    mensaje += `─────────────────\n`;
+    mensaje += `───────────────\n`;
 
-    mensaje += `\u{1F916} *Robots:*\n${robotsSeleccionados}\n`;
-    mensaje += `─────────────────\n`;
+    mensaje += `\u{1F916} *Robots:* ${robotsSeleccionados}\n`;
+    mensaje += `───────────────\n`;
 
     mensaje += `\u2728 *Adicionales:*\n${adicionalesSeleccionados || "• Ninguno"}\n`;
-    mensaje += `─────────────────\n`;
+    mensaje += `───────────────\n`;
 
     if (fechaFormateada) {
         mensaje += `\u{1F4C6} *Fecha:* ${fechaFormateada}\n`;
-        mensaje += `─────────────────\n`;
+        mensaje += `───────────────\n`;
     }
 
     if (idea) {
         mensaje += `\u{1F4DD} *Mi idea:*\n"${idea}"\n`;
-        mensaje += `─────────────────\n`;
+        mensaje += `───────────────\n`;
     }
-
+/*
     // 🎁 DESCUENTO WEB
     mensaje += `\u{1F381} *Beneficio por reserva desde la web*\n`;
     mensaje += `Descuento aplicado: 10%\n`;
     mensaje += `Código: ${codigoWeb}\n`;
-    mensaje += `─────────────────\n`;
-
+    mensaje += `───────────────\n`;
+*/
     // 💰 PRECIOS
-    mensaje += `\u{1F4B0} *Precio estimado*\n`;
+    mensaje += `\u{1F4B0} *PRECIO ESTIMADO:`; 
+    /*
     mensaje += `Precio base: ${precioTexto}\n`;
     mensaje += `Descuento web (-10%): $${descuentoAplicado}\n`;
     mensaje += `*Total con descuento web: $${precioFinal}*\n`;
+    */
+    mensaje += ` $${precioFinal.toLocaleString('es-AR')}*\n`;
     mensaje += `(Debido a traslados de equipos, el precio puede variar según lugar y logística del evento)\n\n`;
 
     mensaje += `\u{1F64F} ¡Gracias! Espero tu respuesta para confirmar disponibilidad.`;
