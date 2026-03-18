@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             threshold: 0.2,
             rootMargin: "0px 0px -60px 0px",
-        }
+        },
     );
 
     element.forEach((elem) => {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             threshold: 0.5, // cuando el 50% del elemento está visible
-        }
+        },
     );
 
     // Observar cada número
@@ -120,10 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("scroll", () => {
     const contenedorAnimado = document.querySelector(
-        ".img-video-animation-container"
+        ".img-video-animation-container",
     );
     const contenedor = document.querySelector(
-        ".shows__img-description-container"
+        ".shows__img-description-container",
     );
 
     const rect = contenedor.getBoundingClientRect();
@@ -145,7 +145,7 @@ document.addEventListener("scroll", () => {
     const img = document.querySelector(".img-description__img img");
     const texto = document.querySelector(".img-description__text > h3");
     const contenedor = document.querySelector(
-        ".shows__img-description-container"
+        ".shows__img-description-container",
     );
 
     const rect = contenedor.getBoundingClientRect();
@@ -153,7 +153,7 @@ document.addEventListener("scroll", () => {
     const end = 200; // margen inferior donde termina el efecto
     const scrollPos = Math.max(
         0,
-        Math.min((rect.top - start) * -1, end - start)
+        Math.min((rect.top - start) * -1, end - start),
     );
     const progress = scrollPos / (end - start); // entre 0 y 1
 
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             threshold: 0.1,
-        }
+        },
     );
 
     observer.observe(video);
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             threshold: 0,
-        }
+        },
     );
 
     observador.observe(texto);
@@ -234,7 +234,7 @@ btnEmprender.addEventListener("click", () => {
 const presupuestoBox = document.getElementById("presupuesto__box");
 // CAMBIAR A "SHOW" DE FORMULARIO AL TOCAR CUALQUIERO BOTON DE "Cotizá tu presupuesto".
 const buttonBudget = document.querySelectorAll(
-    ".button-budget, #btnHamburgerCotiza"
+    ".button-budget, #btnHamburgerCotiza",
 );
 
 buttonBudget.forEach((boton) => {
@@ -272,7 +272,7 @@ btnHamburger.addEventListener("click", () => {
 const btnHamburgerInicio = document.getElementById("btnHamburgerInicio");
 const btnHamburgerShows = document.getElementById("btnHamburgerShows");
 const btnHamburgerTestimonos = document.getElementById(
-    "btnHamburgertestimonios"
+    "btnHamburgertestimonios",
 );
 const btnHamburgerEmprende = document.getElementById("btnHamburgerEmprende");
 const btnHamburgerGaleria = document.getElementById("btnHamburgerGaleria");
@@ -319,7 +319,7 @@ btnHamburgerCotiza.addEventListener("click", () => {
 =============================================================*/
 
 const testimoniosVideos = document.querySelectorAll(
-    ".video-box__video > video"
+    ".video-box__video > video",
 );
 const videosObserver = new IntersectionObserver(
     (entries) => {
@@ -335,7 +335,7 @@ const videosObserver = new IntersectionObserver(
     {
         root: null,
         threshold: 0.8,
-    }
+    },
 );
 testimoniosVideos.forEach((vid) => {
     videosObserver.observe(vid);
@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function calcularPrecio() {
         //"presupuestoBox es la caja de todo el formulario, declarado antes."
         const inputsSelect = presupuestoBox.querySelectorAll(
-            'input[type="radio"][data-price]:checked, input[type="checkbox"][data-price]:checked'
+            'input[type="radio"][data-price]:checked, input[type="checkbox"][data-price]:checked',
         );
         let total = 0;
         inputsSelect.forEach((input) => {
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Agrego change a todos los inputs que pueden seleccionarse, para cambiar el precio total cada vez q un boton se selecciona
     const inputsAll = presupuestoBox.querySelectorAll(
-        'input[type="checkbox"][data-price], input[type="radio"][data-price]'
+        'input[type="checkbox"][data-price], input[type="radio"][data-price]',
     );
 
     inputsAll.forEach((input) => {
@@ -433,7 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const box2 = document.getElementById("presupuesto__box-opacity-2");
     const checksEvento = document.querySelectorAll('input[name="tipo-evento"]');
     const checksRobots = document.querySelectorAll(
-        'input[name="cantidad-robots"]'
+        'input[name="cantidad-robots"]',
     );
 
     checksEvento.forEach((check) => {
@@ -466,7 +466,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
 
     // Evento
     const eventoSeleccionado = document.querySelector(
-        'input[name="tipo-evento"]:checked'
+        'input[name="tipo-evento"]:checked',
     );
     let tipoEvento = eventoSeleccionado?.value || "";
     if (tipoEvento.toLowerCase() === "otro") {
@@ -477,7 +477,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     // Robots + incluye
     const robotsSeleccionados =
         Array.from(
-            document.querySelectorAll('input[name="cantidad-robots"]:checked')
+            document.querySelectorAll('input[name="cantidad-robots"]:checked'),
         )
             .map((el) => el.value)
             .join(", ") +
@@ -485,7 +485,9 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
 
     // Adicionales
     const adicionalesSeleccionados = Array.from(
-        document.querySelectorAll('input[name="servicios-adicionales"]:checked')
+        document.querySelectorAll(
+            'input[name="servicios-adicionales"]:checked',
+        ),
     )
         .map((el) => `• ${el.value.replace("-", " ")}`)
         .join("\n");
@@ -526,7 +528,7 @@ document.getElementById("btnEnviarWsp").addEventListener("click", function () {
     const precioFinal = precioNumerico; /* - descuentoAplicado; */
 
     // ───────── MENSAJE ─────────
-    let mensaje = `*¡Hola Seba! Generé este presupuesto desde tu página web para un show LED:*\n\n`;
+    let mensaje = `*¡Hola Android Show Led! Generé este presupuesto desde tu página web para un show LED:*\n\n`;
 
     mensaje += `\u{1F4C5} *Evento:* ${tipoEvento || "No especificado"}\n`;
     mensaje += `───────────────\n`;
@@ -578,7 +580,7 @@ document
 
         // Productos seleccionados
         const productos = Array.from(
-            document.querySelectorAll('input[name="producto"]:checked')
+            document.querySelectorAll('input[name="producto"]:checked'),
         )
             .map((el) => `\u2022 *${el.nextElementSibling.textContent.trim()}*`) // •
             .join("\n");
@@ -589,7 +591,7 @@ document
             .value.trim();
 
         // Mensaje final
-        let mensaje = `*¡Hola Seba! Vengo de tu página web y estoy interesado en productos LED para emprender:*\n\n`;
+        let mensaje = `*¡Hola Android Show Led! Vengo de tu página web y estoy interesado en productos LED para emprender:*\n\n`;
 
         mensaje += `\u{1F9E9} *Productos seleccionados:*\n${
             productos || "\u2022 *Ninguno seleccionado*"
@@ -604,7 +606,7 @@ document
         mensaje += `\n\u{1F4E6} ¿Podrías pasarme más info y precios?\n\u{1F64F} ¡Gracias!`;
 
         const url = `https://wa.me/${numero}?text=${encodeURIComponent(
-            mensaje
+            mensaje,
         )}`;
         window.open(url, "_blank");
     });
